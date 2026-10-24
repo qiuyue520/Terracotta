@@ -593,7 +593,7 @@ pub fn start_guest(room: Room, player: Option<String>, capture: AppStateCapture,
 }
 
 fn compute_arguments(room: &Room, public_servers: PublicServers) -> Vec<Argument> {
-    static DEFAULT_ARGUMENTS: [Argument; 8] = [
+    static DEFAULT_ARGUMENTS: [Argument; 7] = [
         Argument::NoTun,
         Argument::Compression(Cow::Borrowed("zstd")),
         Argument::MultiThread,
@@ -607,7 +607,6 @@ fn compute_arguments(room: &Room, public_servers: PublicServers) -> Vec<Argument
             address: SocketAddrV4::new(Ipv4Addr::UNSPECIFIED, 0).into(),
             proto: Proto::TCP,
         },
-        Argument::P2POnly
     ];
 
     let mut args: Vec<Argument> = Vec::with_capacity(32);

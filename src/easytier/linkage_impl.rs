@@ -115,9 +115,6 @@ pub fn create(args: Vec<Argument>) -> EasyTier {
             Argument::UdpWhitelist(port) => {
                 udp_whitelist().push(Value::String(port.to_string()));
             }
-            Argument::P2POnly => {
-                flags().insert("p2p_only".into(), Value::Boolean(true));
-            }
         }
     }
 

@@ -99,7 +99,6 @@ pub fn create(args: Vec<Argument>) -> EasyTier {
                 Argument::IPv4(address) => push!["--ipv4", address.to_string()],
                 Argument::TcpWhitelist(port) => push![format!("--tcp-whitelist={}", port)],
                 Argument::UdpWhitelist(port) => push![format!("--udp-whitelist={}", port)],
-                Argument::P2POnly => push!["--p2p-only"],
             }
         }
         built
